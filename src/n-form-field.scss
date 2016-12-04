@@ -1,0 +1,94 @@
+@mixin n-form-field {
+	n-form-field,
+	[n-form-field] {
+		display: block;
+
+		// Support multiple ngMessages
+		.form-error {
+			> * {
+				display: block;
+			}
+		}
+	}
+}
+
+@mixin n-form-field-contextual-styles {
+	// Add is-invalid-label to the input-group-label element
+	.input-group-label.is-invalid-label {
+		@include form-input-error($background: $alert-color);
+	}
+
+	// Success
+	.is-success-input {
+		@include form-input-error($background: $success-color);
+		&::placeholder {
+			color: $success-color;
+		}
+	}
+	.is-success-label {
+		color: $success-color;
+	}
+	.input-group-label.is-success-label {
+		@include form-input-error($background: $success-color);
+	}
+	.form-success {
+		@include form-error;
+
+		color: $success-color;
+
+		&.is-visible {
+			display: block;
+		}
+	}
+
+	// Warning
+	.is-warning-input {
+		@include form-input-error($background: $warning-color);
+		&::placeholder {
+			color: $warning-color;
+		}
+	}
+	.is-warning-label {
+		color: $warning-color;
+	}
+	.input-group-label.is-warning-label {
+		@include form-input-error($background: $warning-color);
+	}
+	.form-warning {
+		@include form-error;
+
+		color: $warning-color;
+
+		&.is-visible {
+			display: block;
+		}
+	}
+
+	// Loading
+	.is-loading-input {
+		@include form-input-error($background: $dark-gray);
+		&::placeholder {
+			color: $dark-gray;
+		}
+	}
+	.is-loading-label {
+		color: $dark-gray;
+	}
+	.input-group-label.is-loading-label {
+		@include form-input-error($background: $dark-gray);
+	}
+	.form-loading {
+		@include form-error;
+
+		color: $dark-gray;
+
+		&.is-visible {
+			display: block;
+		}
+	}
+}
+
+@mixin n-form-field-include-everything {
+	@include n-form-field;
+	@include n-form-field-contextual-classes;
+}

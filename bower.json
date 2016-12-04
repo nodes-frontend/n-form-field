@@ -1,0 +1,20 @@
+{
+  "name": "n-form-field",
+  "main": "n-form-field",
+  "homepage": "https://github.com/dennishn/n-uib-foundatoin-tpls",
+  "authors": [
+    "Dennis Haulund Nielsen <dhni@nodes.dk>"
+  ],
+  "description": "Yum! Consistency for form inputs.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.4"
+  }
+}
